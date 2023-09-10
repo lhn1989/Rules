@@ -63,7 +63,7 @@ ruleset=DIRECT,clash-classic:https://raw.githubusercontent.com/dler-io/Rules/mai
 ruleset=Domestic,[]GEOIP,CN
 ruleset=Others,[]FINAL
 
-custom_proxy_group=Auto - UrlTest`url-test`(U-1X-BGP-HK|Hong|香港)`https://cp.cloudflare.com/generate_204`600,,100
+custom_proxy_group=Auto - UrlTest`url-test`("U-1X-BGP-HK"|Hong|香港)`https://cp.cloudflare.com/generate_204`600,,100
 custom_proxy_group=Proxy`select`[]Auto - UrlTest`[]DIRECT`.*
 custom_proxy_group=Domestic`select`[]DIRECT`[]Proxy
 custom_proxy_group=Others`select`[]Proxy`[]DIRECT`[]Domestic
