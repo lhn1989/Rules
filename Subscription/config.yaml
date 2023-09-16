@@ -12,7 +12,7 @@ proxy-groups:
 - name: Proxy
   type: select
   proxies:
-  - Auto
+  - Auto - UrlTest
   - UrlTest
   - DIRECT
   <UsePlaceholder>
