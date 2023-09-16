@@ -1,12 +1,12 @@
 p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
 
 proxy-providers:
-ProxyProvidersPlaceholder
+<ProxyProvidersPlaceholder>
 proxy-groups:
 - name: Auto - UrlTest
   type: url-test
   disable-udp: false
-  UsePlaceholder
+  <UsePlaceholder>
   url: https://cp.cloudflare.com/generate_204
   interval: '600'
   tolerance: 100
@@ -17,7 +17,7 @@ proxy-groups:
   - Auto
   - UrlTest
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
 - name: Domestic
   type: select
   proxies:
@@ -39,7 +39,7 @@ proxy-groups:
   proxies:
   - Proxy
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
 - name: Apple
   type: select
   proxies:
@@ -50,7 +50,7 @@ proxy-groups:
   proxies:
   - Proxy
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
 - name: Google FCM
   type: select
@@ -67,20 +67,20 @@ proxy-groups:
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
 - name: Pornhub
   type: select
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
 - name: Netflix
   type: select
   disable-udp: false
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
   filter: U-1X-BGP-HK|Hong|香港
 - name: Disney
   type: select
@@ -88,7 +88,7 @@ proxy-groups:
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
   filter: U-1X-BGP-HK|Hong|香港
 - name: YouTube
   type: select
@@ -96,7 +96,7 @@ proxy-groups:
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
 - name: Spotify
   type: select
@@ -134,7 +134,7 @@ proxy-groups:
   proxies:
   - Proxy
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
 - name: Telegram
   type: select
   proxies:
@@ -158,7 +158,7 @@ proxy-groups:
 - name: Google
   type: select
   disable-udp: false
-  UsePlaceholder
+  <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
 - name: Amazon
   type: select
@@ -166,7 +166,7 @@ proxy-groups:
   proxies:
   - Global TV
   - DIRECT
-  UsePlaceholder
+  <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
 rules:
 - RULE-SET,Reject,AdBlock
