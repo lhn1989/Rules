@@ -4,7 +4,6 @@ use: &use
 UsePlaceholder
 proxy-providers:
 ProxyProvidersPlaceholder
-
 proxy-groups:
 - name: Auto - UrlTest
   type: url-test
