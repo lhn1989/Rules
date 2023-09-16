@@ -13,7 +13,6 @@ proxy-groups:
   type: select
   proxies:
   - Auto - UrlTest
-  - UrlTest
   - DIRECT
   <UsePlaceholder>
 - name: Domestic
