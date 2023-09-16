@@ -2,7 +2,6 @@ p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www
 
 use: &use
 UsePlaceholder
-
 proxy-providers:
 ProxyProvidersPlaceholder
 
