@@ -5,7 +5,7 @@ proxy-groups:
   type: url-test
   disable-udp: false
   <UsePlaceholder>
-  url: https://cp.cloudflare.com/generate_204
+  url: "https://cp.cloudflare.com/generate_204"
   interval: '600'
   tolerance: 100
   filter: U-1X-BGP-HK|Hong|香港
