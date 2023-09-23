@@ -212,6 +212,7 @@ rules:
 - RULE-SET,Apple Music,Apple TV
 - RULE-SET,Apple News,Apple TV
 - RULE-SET,Apple TV,Apple TV
+- RULE-SET,Apple TV+,Apple TV
 - RULE-SET,Apple,Apple
 - RULE-SET,Telegram,Telegram
 - RULE-SET,Crypto,Crypto
@@ -230,7 +231,6 @@ rules:
 - RULE-SET,MsftConnectTest,Proxy
 - RULE-SET,Pluto TV,Google
 - RULE-SET,Amazon+,Amazon
-- RULE-SET,Apple TV+,Apple TV
 ##- RULE-SET,Xunlei,REJECT
 
 - RULE-SET,PROXY,Proxy
@@ -289,6 +289,7 @@ script:
             "Apple Music": "Apple TV",
             "Apple News": "Apple TV",
             "Apple TV": "Apple TV",
+            "Apple TV+": "Apple TV",
             "Apple": "Apple",
             "Telegram": "Telegram",
             "Crypto": "Crypto",
@@ -307,7 +308,6 @@ script:
             "MsftConnectTest": "Proxy",
             "Pluto TV": "Google",
             "Amazon+": "Amazon",
-            "Apple TV+": "Apple TV",
             "PROXY": "Proxy",
             "Domestic": "Domestic",
             "Domestic IPs": "Domestic",
