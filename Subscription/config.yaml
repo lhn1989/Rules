@@ -45,6 +45,7 @@ proxy-groups:
 - name: Apple TV
   type: select
   proxies:
+  - Google
   - Proxy
   - DIRECT
   <UsePlaceholder>
