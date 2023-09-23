@@ -166,6 +166,7 @@ proxy-groups:
   - DIRECT
   <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
+
 rules:
 - RULE-SET,Reject,AdBlock
 - RULE-SET,Special,DIRECT
