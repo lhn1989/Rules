@@ -29,8 +29,8 @@ proxy-groups:
 - name: Microsoft
   type: select
   proxies:
-  - DIRECT
   - Proxy
+  - DIRECT
 - name: OpenAI
   type: select
   proxies:
