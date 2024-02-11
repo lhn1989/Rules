@@ -44,8 +44,8 @@ proxy-groups:
 - name: Others
   type: select
   proxies:
-  - DIRECT
   - Proxy
+  - DIRECT
 - name: Microsoft
   type: select
   proxies:
