@@ -15,17 +15,11 @@ proxy-groups:
   - Auto - UrlTest
   - DIRECT
   <UsePlaceholder>
-- name: Domestic
-  type: select
-  proxies:
-  - DIRECT
-  - Proxy
 - name: Others
   type: select
   proxies:
-  - Proxy
   - DIRECT
-  - Domestic
+  - Proxy
 - name: Microsoft
   type: select
   proxies:
@@ -55,28 +49,20 @@ proxy-groups:
   proxies:
   - DIRECT
   - Proxy
-- name: Scholar
-  type: select
-  proxies:
-  - DIRECT
-  - Proxy
 - name: HBO Max
   type: select
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
 - name: Pornhub
   type: select
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
 - name: Netflix
   type: select
   disable-udp: false
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
   filter: U-1X-BGP-HK|Hong|香港
@@ -84,7 +70,6 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
   filter: U-1X-BGP-HK|Hong|香港
@@ -92,41 +77,20 @@ proxy-groups:
   type: select
   disable-udp: true
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
-- name: Spotify
-  type: select
-  proxies:
-  - Global TV
-  - DIRECT
 - name: Steam
   type: select
   proxies:
   - Proxy
   - DIRECT
-- name: miHoYo
-  type: select
-  proxies:
-  - DIRECT
-  - Proxy
 - name: AdBlock
   type: select
   proxies:
   - REJECT
   - DIRECT
   - Proxy
-- name: Asian TV
-  type: select
-  proxies:
-  - DIRECT
-  - Proxy
-- name: Global TV
-  type: select
-  proxies:
-  - Proxy
-  - DIRECT
 - name: Speedtest
   type: select
   proxies:
@@ -134,16 +98,6 @@ proxy-groups:
   - DIRECT
   <UsePlaceholder>
 - name: Telegram
-  type: select
-  proxies:
-  - Proxy
-  - DIRECT
-- name: Crypto
-  type: select
-  proxies:
-  - Proxy
-  - DIRECT
-- name: Discord
   type: select
   proxies:
   - Proxy
@@ -158,11 +112,10 @@ proxy-groups:
   disable-udp: false
   <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
-- name: Amazon
+- name: Amazon Prime Video
   type: select
   disable-udp: false
   proxies:
-  - Global TV
   - DIRECT
   <UsePlaceholder>
   filter: USA|U-1X-BGP-US|美国
@@ -174,73 +127,34 @@ rules:
 - RULE-SET,Netflix,Netflix
 - RULE-SET,Disney Plus,Disney
 - RULE-SET,YouTube,YouTube
-- RULE-SET,Spotify,Spotify
-- RULE-SET,Bilibili,Asian TV
-- RULE-SET,IQ,Asian TV
-- RULE-SET,IQIYI,Asian TV
-- RULE-SET,Letv,Asian TV
-- RULE-SET,Netease Music,Asian TV
-- RULE-SET,Tencent Video,Asian TV
-- RULE-SET,Youku,Asian TV
-- RULE-SET,WeTV,Asian TV
-- RULE-SET,ABC,Global TV
-- RULE-SET,Abema TV,Global TV
-- RULE-SET,Amazon,Amazon
-- RULE-SET,Bahamut,Global TV
-- RULE-SET,BBC iPlayer,Global TV
-- RULE-SET,DAZN,Global TV
-- RULE-SET,Discovery Plus,Global TV
-- RULE-SET,encoreTVB,Global TV
-- RULE-SET,F1 TV,Global TV
-- RULE-SET,Fox Now,Global TV
-- RULE-SET,Fox+,Global TV
-- RULE-SET,HBO Go,Global TV
+- RULE-SET,Amazon Prime Video,Amazon Prime Video
 - RULE-SET,HBO Max,HBO Max
-- RULE-SET,Hulu Japan,Global TV
-- RULE-SET,Hulu,Global TV
-- RULE-SET,Japonx,Global TV
-- RULE-SET,JOOX,Global TV
-- RULE-SET,KKBOX,Global TV
-- RULE-SET,KKTV,Global TV
-- RULE-SET,Line TV,Global TV
-- RULE-SET,myTV SUPER,Global TV
-- RULE-SET,Niconico,Global TV
-- RULE-SET,Pandora,Global TV
-- RULE-SET,PBS,Global TV
 - RULE-SET,Pornhub,Pornhub
-- RULE-SET,Soundcloud,Global TV
-- RULE-SET,ViuTV,Global TV
-- RULE-SET,Apple Music,Apple TV
-- RULE-SET,Apple News,Apple TV
 - RULE-SET,Apple TV,Apple TV
 - RULE-SET,Apple TV+,Apple TV
 - RULE-SET,Apple,Apple
 - RULE-SET,Telegram,Telegram
-- RULE-SET,Crypto,Crypto
-- RULE-SET,Discord,Discord
 - RULE-SET,Google FCM,Google FCM
 - RULE-SET,Google,Google
 - RULE-SET,Microsoft,Microsoft
 - RULE-SET,OpenAI,OpenAI
 - RULE-SET,PayPal,PayPal
-- RULE-SET,Scholar,Scholar
 - RULE-SET,Speedtest,Speedtest
 - RULE-SET,Steam,Steam
-- RULE-SET,miHoYo,miHoYo
 - RULE-SET,FANZA,Pornhub
 - RULE-SET,Epic Games,Steam
 - RULE-SET,MsftConnectTest,Proxy
 - RULE-SET,Pluto TV,Google
-- RULE-SET,Amazon+,Amazon
+- RULE-SET,Amazon+,Amazon Prime Video
 ##- RULE-SET,Xunlei,REJECT
 
 - RULE-SET,PROXY,Proxy
 
-- RULE-SET,Domestic,Domestic
-- RULE-SET,Domestic IPs,Domestic
+- RULE-SET,Domestic,DIRECT
+- RULE-SET,Domestic IPs,DIRECT
 
 - RULE-SET,LAN,DIRECT
-- GEOIP,CN,Domestic
+- GEOIP,CN,DIRECT
 - MATCH,Others
 
 script:
@@ -252,67 +166,28 @@ script:
             "Netflix": "Netflix",
             "Disney Plus": "Disney",
             "YouTube": "YouTube",
-            "Spotify": "Spotify",
-            "Bilibili": "Asian TV",
-            "IQ": "Asian TV",
-            "IQIYI": "Asian TV",
-            "Letv": "Asian TV",
-            "Netease Music": "Asian TV",
-            "Tencent Video": "Asian TV",
-            "Youku": "Asian TV",
-            "WeTV": "Asian TV",
-            "ABC": "Global TV",
-            "Abema TV": "Global TV",
-            "Amazon": "Amazon",
-            "Bahamut": "Global TV",
-            "BBC iPlayer": "Global TV",
-            "DAZN": "Global TV",
-            "Discovery Plus": "Global TV",
-            "encoreTVB": "Global TV",
-            "F1 TV": "Global TV",
-            "Fox Now": "Global TV",
-            "Fox+": "Global TV",
-            "HBO Go": "Global TV",
+            "Amazon Prime Video": "Amazon Prime Video",
             "HBO Max": "HBO Max",
-            "Hulu Japan": "Global TV",
-            "Hulu": "Global TV",
-            "Japonx": "Global TV",
-            "JOOX": "Global TV",
-            "KKBOX": "Global TV",
-            "KKTV": "Global TV",
-            "Line TV": "Global TV",
-            "myTV SUPER": "Global TV",
-            "Niconico": "Global TV",
-            "Pandora": "Global TV",
-            "PBS": "Global TV",
             "Pornhub": "Pornhub",
-            "Soundcloud": "Global TV",
-            "ViuTV": "Global TV",
-            "Apple Music": "Apple TV",
-            "Apple News": "Apple TV",
             "Apple TV": "Apple TV",
             "Apple TV+": "Apple TV",
             "Apple": "Apple",
             "Telegram": "Telegram",
-            "Crypto": "Crypto",
-            "Discord": "Discord",
             "Google FCM": "Google FCM",
             "Google": "Google",
             "Microsoft": "Microsoft",
             "OpenAI": "OpenAI",
             "PayPal": "PayPal",
-            "Scholar": "Scholar",
             "Speedtest": "Speedtest",
             "Steam": "Steam",
-            "miHoYo": "miHoYo",
             "FANZA": "Pornhub",
             "Epic Games": "Steam",
             "MsftConnectTest": "Proxy",
             "Pluto TV": "Google",
-            "Amazon+": "Amazon",
+            "Amazon+": "Amazon Prime Video",
             "PROXY": "Proxy",
-            "Domestic": "Domestic",
-            "Domestic IPs": "Domestic",
+            "Domestic": "DIRECT",
+            "Domestic IPs": "DIRECT",
             "LAN": "DIRECT"
           }
 
@@ -338,7 +213,7 @@ script:
             code = ctx.geoip(metadata["dst_ip"])
             if code == "CN":
                 ctx.log('[Script] Geoip CN')
-                return "Domestic"
+                return "DIRECT"
 
         ctx.log('[Script] FINAL')
         return "Others"
@@ -359,7 +234,7 @@ rule-providers:
   PROXY:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Proxy.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Proxy/Proxy_Classical.yaml'
     path: ./Rules/Proxy
     interval: 86400
   Domestic:
@@ -383,236 +258,38 @@ rule-providers:
   Netflix:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Netflix.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical.yaml'
     path: ./Rules/Media/Netflix
-    interval: 86400
-  Spotify:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Spotify.yaml'
-    path: ./Rules/Media/Spotify
     interval: 86400
   YouTube:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/YouTube.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml'
     path: ./Rules/Media/YouTube
     interval: 86400
-  Bilibili:
+  Amazon Prime Video:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Bilibili.yaml'
-    path: ./Rules/Media/Bilibili
-    interval: 86400
-  IQ:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/IQ.yaml'
-    path: ./Rules/Media/IQI
-    interval: 86400
-  IQIYI:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/IQIYI.yaml'
-    path: ./Rules/Media/IQYI
-    interval: 86400
-  Letv:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Letv.yaml'
-    path: ./Rules/Media/Letv
-    interval: 86400
-  Netease Music:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Netease%20Music.yaml'
-    path: ./Rules/Media/Netease_Music
-    interval: 86400
-  Tencent Video:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Tencent%20Video.yaml'
-    path: ./Rules/Media/Tencent_Video
-    interval: 86400
-  Youku:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Youku.yaml'
-    path: ./Rules/Media/Youku
-    interval: 86400
-  WeTV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/WeTV.yaml'
-    path: ./Rules/Media/WeTV
-    interval: 86400
-  ABC:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/ABC.yaml'
-    path: ./Rules/Media/ABC
-    interval: 86400
-  Abema TV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Abema%20TV.yaml'
-    path: ./Rules/Media/Abema_TV
-    interval: 86400
-  Amazon:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Amazon.yaml'
-    path: ./Rules/Media/Amazon
-    interval: 86400
-  Apple Music:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Apple%20Music.yaml'
-    path: ./Rules/Media/Apple_Music
-    interval: 86400
-  Apple News:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Apple%20News.yaml'
-    path: ./Rules/Media/Apple_News
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml'
+    path: ./Rules/Media/Amazon_Prime_video
     interval: 86400
   Apple TV:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Apple%20TV.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleTV/AppleTV.yaml'
     path: ./Rules/Media/Apple_TV
-    interval: 86400
-  Bahamut:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Bahamut.yaml'
-    path: ./Rules/Media/Bahamut
-    interval: 86400
-  BBC iPlayer:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/BBC%20iPlayer.yaml'
-    path: ./Rules/Media/BBC_iPlayer
-    interval: 86400
-  DAZN:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/DAZN.yaml'
-    path: ./Rules/Media/DAZN
-    interval: 86400
-  Discovery Plus:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Discovery%20Plus.yaml'
-    path: ./Rules/Media/Discovery_Plus
     interval: 86400
   Disney Plus:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Disney%20Plus.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml'
     path: ./Rules/Media/Disney_Plus
-    interval: 86400
-  encoreTVB:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/encoreTVB.yaml'
-    path: ./Rules/Media/encoreTVB
-    interval: 86400
-  F1 TV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/F1%20TV.yaml'
-    path: ./Rules/Media/F1_TV
-    interval: 86400
-  Fox Now:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Fox%20Now.yaml'
-    path: ./Rules/Media/Fox_Now
-    interval: 86400
-  Fox+:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Fox%2B.yaml'
-    path: ./Rules/Media/Fox+
-    interval: 86400
-  HBO Go:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/HBO%20Go.yaml'
-    path: ./Rules/Media/HBO_Go
     interval: 86400
   HBO Max:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/HBO%20Max.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml'
     path: ./Rules/Media/HBO_Max
-    interval: 86400
-  Hulu Japan:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Hulu%20Japan.yaml'
-    path: ./Rules/Media/Hulu_Japan
-    interval: 86400
-  Hulu:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Hulu.yaml'
-    path: ./Rules/Media/Hulu
-    interval: 86400
-  Japonx:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Japonx.yaml'
-    path: ./Rules/Media/Japonx
-    interval: 86400
-  JOOX:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/JOOX.yaml'
-    path: ./Rules/Media/JOOX
-    interval: 86400
-  KKBOX:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/KKBOX.yaml'
-    path: ./Rules/Media/KKBOX
-    interval: 86400
-  KKTV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/KKTV.yaml'
-    path: ./Rules/Media/KKTV
-    interval: 86400
-  Line TV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Line%20TV.yaml'
-    path: ./Rules/Media/Line_TV
-    interval: 86400
-  myTV SUPER:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/myTV%20SUPER.yaml'
-    path: ./Rules/Media/myTV_SUPER
-    interval: 86400
-  Niconico:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Niconico.yaml'
-    path: ./Rules/Media/Niconico
-    interval: 86400
-  Pandora:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Pandora.yaml'
-    path: ./Rules/Media/Pandora
-    interval: 86400
-  PBS:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/PBS.yaml'
-    path: ./Rules/Media/PBS
     interval: 86400
   Pornhub:
     type: http
@@ -620,89 +297,53 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Pornhub.yaml'
     path: ./Rules/Media/Pornhub
     interval: 86400
-  Soundcloud:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Soundcloud.yaml'
-    path: ./Rules/Media/Soundcloud
-    interval: 86400
-  ViuTV:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/ViuTV.yaml'
-    path: ./Rules/Media/ViuTV
-    interval: 86400
   Telegram:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Telegram.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml'
     path: ./Rules/Telegram
-    interval: 86400
-  Crypto:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Crypto.yaml'
-    path: ./Rules/Crypto
-    interval: 86400
-  Discord:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Discord.yaml'
-    path: ./Rules/Discord
     interval: 86400
   Steam:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Steam.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml'
     path: ./Rules/Steam
     interval: 86400
   Speedtest:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Speedtest.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml'
     path: ./Rules/Speedtest
     interval: 86400
   PayPal:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/PayPal.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml'
     path: ./Rules/PayPal
     interval: 86400
   Microsoft:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Microsoft.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml'
     path: ./Rules/Microsoft
     interval: 86400
   OpenAI:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/OpenAI.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml'
     path: ./Rules/OpenAI
     interval: 86400
   Apple:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Apple.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml'
     path: ./Rules/Apple
     interval: 86400
   Google FCM:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Google%20FCM.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.yaml'
     path: ./Rules/Google FCM
-    interval: 86400
-  Scholar:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Scholar.yaml'
-    path: ./Rules/Scholar
-    interval: 86400
-  miHoYo:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/miHoYo.yaml'
-    path: ./Rules/miHoYo
     interval: 86400
   FANZA:
     type: http
@@ -713,7 +354,7 @@ rule-providers:
   Epic Games:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/lhn1989/Rules/master/Provider/Epic%20Games.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml'
     path: ./Rules/Epic Games
     interval: 86400
   MsftConnectTest:
@@ -731,7 +372,7 @@ rule-providers:
   Google:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/lhn1989/Rules/master/Provider/Google.yaml'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml'
     path: ./Rules/Google
     interval: 86400
   Amazon+:
