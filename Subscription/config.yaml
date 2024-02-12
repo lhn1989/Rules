@@ -131,7 +131,6 @@ rules:
 - RULE-SET,HBO Max,HBO Max
 - RULE-SET,Pornhub,Pornhub
 - RULE-SET,Apple TV,Apple TV
-- RULE-SET,Apple TV+,Apple TV
 - RULE-SET,Apple,Apple
 - RULE-SET,Telegram,Telegram
 - RULE-SET,Google FCM,Google FCM
@@ -145,7 +144,6 @@ rules:
 - RULE-SET,Epic Games,Steam
 - RULE-SET,MsftConnectTest,Proxy
 - RULE-SET,Pluto TV,Google
-- RULE-SET,Amazon+,Amazon Prime Video
 ##- RULE-SET,Xunlei,REJECT
 
 - RULE-SET,PROXY,Proxy
@@ -170,7 +168,6 @@ script:
             "HBO Max": "HBO Max",
             "Pornhub": "Pornhub",
             "Apple TV": "Apple TV",
-            "Apple TV+": "Apple TV",
             "Apple": "Apple",
             "Telegram": "Telegram",
             "Google FCM": "Google FCM",
@@ -184,7 +181,6 @@ script:
             "Epic Games": "Steam",
             "MsftConnectTest": "Proxy",
             "Pluto TV": "Google",
-            "Amazon+": "Amazon Prime Video",
             "PROXY": "Proxy",
             "Domestic": "DIRECT",
             "Domestic IPs": "DIRECT",
@@ -374,18 +370,6 @@ rule-providers:
     behavior: classical
     url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml'
     path: ./Rules/Google
-    interval: 86400
-  Amazon+:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/lhn1989/Rules/master/Provider/Amazon%2B.yaml'
-    path: ./Rules/Amazon+
-    interval: 86400
-  Apple TV+:
-    type: http
-    behavior: classical
-    url: 'https://raw.githubusercontent.com/lhn1989/Rules/master/Provider/Apple%20TV%2B.yaml'
-    path: ./Rules/Apple TV+
     interval: 86400
   Xunlei:
     type: http
